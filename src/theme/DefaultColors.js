@@ -6,15 +6,18 @@ const baselightTheme = createTheme({
   direction: 'ltr',
   palette: {
     primary: {
-      main: '#5785D0',
+      main: '#285a9e',
+      light: '#5c84c3',
+      extraLight: 'rgb(236, 242, 255)',
+      dark: '#1e3e67',
+      contrastText: '#ffffff'
     },
     secondary: {
-      main: '#183d72',
-      light: '#1e3e67',
-      dark: '#23afdb',
+      main: '#18244d',
+      contrastText: '#ffffff',
     },
     success: {
-      main: '#13DEB9',
+      main: '#09D880',
       light: '#E6FFFA',
       dark: '#02b3a9',
       contrastText: '#ffffff',
@@ -37,11 +40,6 @@ const baselightTheme = createTheme({
       dark: '#ae8e59',
       contrastText: '#ffffff',
     },
-    purple: {
-      A50: '#EBF3FE',
-      A100: '#6610f2',
-      A200: '#557fb9',
-    },
     grey: {
       100: '#F2F6FA',
       200: '#EAEFF4',
@@ -52,14 +50,15 @@ const baselightTheme = createTheme({
 
     },
     accent:{
-      main:'#ff871f',
-      dark: '#f48124',
-      light: '#f89c53'
+      main:'#f48124',
+      light: '#f4f5f9',
+      dark: '#dd222b'
+      
     },
     text: {
-        dark:'#3A3541',
-        light:'#89868D',
-        disabled:'#B4B2B7'
+      main: '#3a3541',
+      light:'#89868D',
+      disabled: '#B4B2B7'
     },
     action: {
       disabledBackground: 'rgba(73,82,88,0.12)',

@@ -1,3 +1,4 @@
+import { useTheme } from '@emotion/react';
 import { useMediaQuery, Box, Drawer } from '@mui/material';
 import Logo from '../shared/logo/Logo';
 import SidebarItems from './SidebarItems';
@@ -5,6 +6,7 @@ import SidebarItems from './SidebarItems';
 const Sidebar = (props) => {
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up("lg"));
   const sidebarWidth = '270px';
+  const theme = useTheme();
 
   if (lgUp) {
     return (
@@ -24,7 +26,7 @@ const Sidebar = (props) => {
             <Box px={3} style={{ display: "flex", alignItems: "center", borderBottom: '1px solid #eee' }} marginBottom={2}>
               <Logo />
             </Box>
-            <Box>
+            <Box sx={{backgroundColor: theme.palette.secondary.main}}>
               <SidebarItems />
             </Box>
           </Box>

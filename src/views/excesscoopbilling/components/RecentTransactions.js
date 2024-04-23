@@ -8,13 +8,22 @@ import {
   TimelineDot,
   TimelineConnector,
   TimelineContent,
-  timelineOppositeContentClasses,
+  timelineOppositeContentClasses
 } from '@mui/lab';
-import { Link, Typography } from '@mui/material';
+import { Link, Typography ,styled} from '@mui/material';
+import { useTheme } from '@emotion/react';
 
 const RecentTransactions = () => {
+  const theme = useTheme();
+  const TypographyStyled = styled(Typography)(({ theme }) => ({
+		color: theme.palette.text.dark,
+	  }));
   return (
-    <DashboardCard title="Hits & Misses">
+    <DashboardCard  title={
+      <TypographyStyled variant='h4' sx={{ color: theme.palette.secondary.main }}>
+        Hits & Misses
+      </TypographyStyled>
+    } >
       <>
         <Timeline
           className="theme-timeline"
@@ -29,7 +38,7 @@ const RecentTransactions = () => {
               backgroundColor: '#efefef'
             },
             [`& .${timelineOppositeContentClasses.root}`]: {
-              flex: 0.35,
+              flex: 0.5,
               paddingLeft: 0,
             },
           }}

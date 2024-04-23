@@ -31,7 +31,7 @@ const Login2 = () => {
         <Grid container spacing={0} alignItems="center" justifyContent="center" sx={{ height: '100%' }}>
 
           <Grid item xs={12} display="flex" justifyContent="center" alignItems="center">
-            <Card elevation={9} sx={{ width: '100%', maxWidth: '900px' }}>
+            <Card elevation={9} sx={{ width: '100%', maxWidth: '1000px' }}>
               <Grid container spacing={0} alignItems="center" justifyContent="center">
                 <Grid item xs={6}>
                   {/* Adjusted the image container styles */}
@@ -44,8 +44,8 @@ const Login2 = () => {
                   </Box>
                 </Grid>
                 <Grid item xs={6} pt={0}>
-                  <Box sx={{ p: 4, width: '100%', height: '100%' }}>
-                    <Box display="flex" alignItems="center" justifyContent="center" mb={1}>
+                  <Box sx={{ p: 4, width: '100%', height: '100%' }}  style={{padding:'0 50px'}}>
+                    <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
                       <Logo />
                     </Box>
                     <AuthLogin

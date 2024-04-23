@@ -1,9 +1,9 @@
 import { Grid, Stack } from '@mui/material';
 import React from 'react'
 import PageContainer from 'src/components/container/PageContainer';
-import Breadcrumb from './components/Breadcrumb';
+import Breadcrumb from '../../components/pages/Breadcrumb';
 import DisputeTable from './components/DisputeTable';
-import Header from './components/Header';
+import Header from '../../components/pages/Header';
 
 
 const ManageDispute = () => {

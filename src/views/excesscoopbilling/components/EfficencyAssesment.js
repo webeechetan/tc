@@ -15,27 +15,21 @@ const products = [
         Subtype: "Duplicate Freight",
         Document: "Aggrement Scanned",
 		Number:"3256"
-    
-
     },
     {
         Subtype: "Non-compliant Freight",
 		Document: "Invoice Scanned",
 		Number:"3256"
-
- 
     },
     {
         Subtype: "Miscellaneous",
         Document: "Po's Scanned",
 		Number:"3256"
- 
     },
 	{
         Subtype: "Duplicate Billing",
         Document: "Sum Identify",
 		Number:"3256"
- 
     }
 ];
 
@@ -56,7 +50,10 @@ const EfficencyAssesment = () => {
     const theme = useTheme();
 
     return (
-        <DashboardCard title="Efficency Assesment">
+        <DashboardCard  title={
+            <Typography variant='h4' sx={{ color: theme.palette.text.dark }}>
+              Efficiency Assessment
+            </Typography>}>
             <Box sx={{ overflow: 'auto', width: { xs: '280px', sm: 'auto' } }}>
                 <Table
                     aria-label="simple table"
@@ -68,7 +65,7 @@ const EfficencyAssesment = () => {
                     <TableHeadStyled>
                         <TableRow>
                             <TableCellStyled>
-                                <Typography variant="h6" fontWeight={700}>
+                                <Typography variant="h6" fontWeight={700} sx={{color: theme.palette.accent.main}}>
 								   Efficiency Assessment
                                 </Typography>
                             </TableCellStyled>
@@ -81,7 +78,7 @@ const EfficencyAssesment = () => {
                     </TableHeadStyled>
                     <TableBody>
                         {products.map((product, index) => (
-                            <TableRow key={index}>
+                            <TableRow key={index} sx={{ backgroundColor: index % 2 === 0 ? theme.palette.background.default : 'inherit' }}>
                                 <TableCellStyled>
                                     <Typography
                                         sx={{
@@ -95,7 +92,7 @@ const EfficencyAssesment = () => {
                                 <TableCellStyled>
                                     <Box>
 										<Stack direction='row' spacing={0} alignItems="center" justifyContent="space-between">
-										    <Typography variant="subtitle2" fontWeight={600}>
+										    <Typography variant="subtitle2" fontWeight={600} sx={{ color: index % 2 === 0 ? theme.palette.primary.main : theme.palette.secondary.main }}>
                                                 {product.Document}
                                             </Typography>
                                             <Typography
