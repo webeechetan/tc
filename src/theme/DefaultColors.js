@@ -6,7 +6,7 @@ const baselightTheme = createTheme({
   direction: 'ltr',
   palette: {
     primary: {
-      main: '#6E39CB',
+      main: '#5785D0',
     },
     secondary: {
       main: '#183d72',

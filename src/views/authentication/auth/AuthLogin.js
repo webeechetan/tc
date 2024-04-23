@@ -7,8 +7,15 @@ import {
     Button,
     Stack,
     Checkbox,
-    TextField
+    TextField,
+    styled
 } from '@mui/material';
+
+const TypographyPara =styled(Typography)(({ theme }) => ({
+    color: theme.palette.text.dark,
+    fontWeight: '500',
+    textDecoration:'none'
+  }));
 import { Link } from 'react-router-dom';
 
 const AuthLogin = ({ title, subtext }) => (
@@ -21,12 +28,12 @@ const AuthLogin = ({ title, subtext }) => (
         {subtext}
 
         <Stack spacing={2}>
-            <Box>
+            <Box paddingBottom={2}>
                 <TextField
                     id="email"
                     variant="outlined"
                     placeholder="Enter your email here"
-                    fullWidth
+                    fullWidth 
                 />
             </Box>
             <Box>
@@ -45,17 +52,13 @@ const AuthLogin = ({ title, subtext }) => (
                         label="Remember this Device"
                     />
                 </FormGroup>
-                <Typography
+                < TypographyPara
                     component={Link}
                     to="/"
-                    fontWeight="500"
-                    sx={{
-                        textDecoration: 'none',
-                        color: 'secondary.main',
-                    }}
+                    
                 >
                     Forgot Password ?
-                </Typography>
+                </ TypographyPara>
             </Stack>
         </Stack>
         <Box marginTop={1}>
