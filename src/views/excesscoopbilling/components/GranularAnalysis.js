@@ -9,6 +9,26 @@ import {
 } from '@mui/material';
 import DashboardCard from '../../../components/shared/DashboardCard';
 
+
+const TypographyStyled = styled(Typography)({});
+
+const TableHeadStyled = styled(TableHead)(({ theme }) => ({
+    backgroundColor: theme.palette.primary.main,
+    borderRadius:'7px',
+   
+}));
+const TableTypography = styled(TableHead)(({ theme }) => ({
+    color: theme.palette.primary.contrastText,
+    fontSize: '16px'
+  
+
+   
+}));
+const TableCellStyled = styled(TableCell)(({ theme, index }) => ({
+    color: index % 2 === 0 ? theme.palette.secondary.main : theme.palette.accent.main,
+
+}));
+
 const products = [
     {
         Subtype: "Duplicate Freight",
@@ -30,56 +50,43 @@ const products = [
     }
 ];
 
-const TableCellStyled = styled(TableCell)(({ theme }) => ({
-    padding: '16px',
-	borderBottom: '1px solid #eee',
-}));
-
-const TableHeadStyled = styled(TableHead)(({ theme }) => ({
-    backgroundColor: theme.palette.primary.light,
-}));
-
 const GranularAnalysis = () => {
-    const theme = useTheme();
-
+    const theme = useTheme(); 
     return (
-        <DashboardCard title="Granular Analysis">
+        <DashboardCard title={
+            <TypographyStyled variant='h4' sx={{ color: theme.palette.text.dark }}>
+                Granular Analysis
+            </TypographyStyled>}>
             <Box sx={{ overflow: 'auto', width: { xs: '280px', sm: 'auto' } }}>
-                <Table
-                    aria-label="simple table"
-                    sx={{
-                        whiteSpace: "nowrap",
-                        mt: 2
-                    }}
-                >
-                    <TableHeadStyled>
+                <Table aria-label="simple table" sx={{ whiteSpace: "nowrap", mt: 2 }}>
+                    <TableHeadStyled theme={theme}>
                         <TableRow>
-                            <TableCellStyled>
-                                <Typography variant="subtitle2" fontWeight={600}>
+                            <TableCell>
+                                <TableTypography variant="subtitle2" fontWeight={600}>
                                     Sub-type
-                                </Typography>
-                            </TableCellStyled>
-                            <TableCellStyled>
-                                <Typography variant="subtitle2" fontWeight={600}>
+                                </TableTypography>
+                            </TableCell>
+                            <TableCell>
+                                <TableTypography variant="subtitle2" fontWeight={600}>
                                     Findings $
-                                </Typography>
-                            </TableCellStyled>
-                            <TableCellStyled>
-                                <Typography variant="subtitle2" fontWeight={600}>
-                                    Prior Adjustments $Name
-                                </Typography>
-                            </TableCellStyled>
-                            <TableCellStyled>
-                                <Typography variant="subtitle2" fontWeight={600}>
+                                </TableTypography>
+                            </TableCell>
+                            <TableCell>
+                                <TableTypography variant="subtitle2" fontWeight={600}>
+                                    Prior Adjustments $
+                                </TableTypography>
+                            </TableCell>
+                            <TableCell>
+                                <TableTypography variant="subtitle2" fontWeight={600}>
                                     Net Off
-                                </Typography>
-                            </TableCellStyled>
+                                </TableTypography>
+                            </TableCell>
                         </TableRow>
                     </TableHeadStyled>
                     <TableBody>
                         {products.map((product, index) => (
                             <TableRow key={index}>
-                                <TableCellStyled>
+                                   <TableCellStyled index={index}>
                                     <Typography
                                         sx={{
                                             fontSize: "15px",
@@ -89,38 +96,21 @@ const GranularAnalysis = () => {
                                         {product.Subtype}
                                     </Typography>
                                 </TableCellStyled>
-                                <TableCellStyled>
-                                    <Box
-                                        sx={{
-                                            display: "flex",
-                                            alignItems: "center",
-                                        }}
-                                    >
-                                        <Box>
-                                            <Typography variant="subtitle2" fontWeight={600}>
-                                                {product.name}
-                                            </Typography>
-                                            <Typography
-                                                color="textSecondary"
-                                                sx={{
-                                                    fontSize: "13px",
-                                                }}
-                                            >
-                                                {product.Findings$}
-                                            </Typography>
-                                        </Box>
-                                    </Box>
-                                </TableCellStyled>
-                                <TableCellStyled>
-                                    <Typography color="textSecondary" variant="subtitle2" fontWeight={400}>
+                                <TableCell>
+                                    <Typography variant="subtitle2" fontWeight={600}>
+                                        {product.Findings$}
+                                    </Typography>
+                                </TableCell>
+                                <TableCell>
+                                    <Typography variant="subtitle2" fontWeight={400}>
                                         {product.PriorAdjustments$}
                                     </Typography>
-                                </TableCellStyled>
-                                <TableCellStyled>
-                                    <Typography color="textSecondary" variant="subtitle2" fontWeight={400}>
+                                </TableCell>
+                                <TableCell>
+                                    <Typography variant="subtitle2" fontWeight={400}>
                                         {product.NetOff}
                                     </Typography>
-                                </TableCellStyled>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

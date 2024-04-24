@@ -56,7 +56,7 @@ const FullLayout = () => {
         <Container
           sx={{
             paddingTop: "20px",
-            maxWidth: '1200px',
+            maxWidth: '1600px',
           }}
         >
           {/* Page Route */}

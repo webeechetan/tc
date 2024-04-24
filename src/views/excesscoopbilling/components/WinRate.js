@@ -1,12 +1,16 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
 import { useTheme } from '@mui/material/styles';
+import {Typography } from '@mui/material';
 import DashboardCard from '../../../components/shared/DashboardCard';
 
 const WinRate = () => {
     const theme = useTheme();
     const primary = theme.palette.primary.main;
     const secondary = theme.palette.secondary.main;
+
+    const yAxisLabelColors = [theme.palette.text.primary, theme.palette.text.secondary];
+
     const optionsWinRate = {
         chart: {
             type: 'bar',
@@ -15,10 +19,10 @@ const WinRate = () => {
             toolbar: {
                 show: false,
             },
-			offsetX: -20,
+            offsetX: -20,
             height: 50,
         },
-        colors: [primary, secondary],
+        colors: [primary, secondary], 
         plotOptions: {
             bar: {
                 horizontal: true,
@@ -27,6 +31,9 @@ const WinRate = () => {
                 borderRadius: [6],
                 borderRadiusApplication: 'end',
                 borderRadiusWhenStacked: 'all',
+                dataLabels: {
+                    position: 'center',
+                },
             },
         },
         stroke: {
@@ -52,37 +59,52 @@ const WinRate = () => {
         },
         yaxis: {
             tickAmount: 4,
-            show: false,
+            show: true,
+            labels: {
+                style: {
+                    fontSize: '14px', 
+                    colors: yAxisLabelColors, 
+                },
+            },
         },
         xaxis: {
-            categories: [' Incorrect Freight', 'Incorrect Code', ' Incorrect Agreement', 'Duplicate Agreement'],
+            categories: ['Incorrect Freight', 'Incorrect Code', 'Incorrect Agreement', 'Duplicate Agreement'],
             axisBorder: {
                 show: false,
             },
-			show: false,
+            labels: {
+                style: {
+                    colors: theme.palette.text.primary, 
+                },
+            },
         },
         tooltip: {
             theme: theme.palette.mode === 'dark' ? 'dark' : 'light',
             fillSeriesColor: false,
         },
     };
+
     const seriesWinRate = [
         {
             name: 'Win Rate',
-            data: [20, 40, 30 ,50, 70, 80, 100],
-        }
+            data: [20, 40, 30, 50],
+        },
     ];
+
     return (
-        <DashboardCard title="Win Rate">
+        <DashboardCard title={
+            <Typography variant='h4' sx={{ color: theme.palette.text.dark }}>
+                Win Rate
+            </Typography>}>
             <Chart
                 options={optionsWinRate}
                 series={seriesWinRate}
                 type="bar"
                 height="230px"
-				width= '100%'
+                width="100%"
             />
         </DashboardCard>
     );
-}
+};
 
 export default WinRate;

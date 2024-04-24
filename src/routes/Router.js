@@ -9,6 +9,7 @@ const FullLayout = Loadable(lazy(() => import('../layouts/full/FullLayout')));
 const Dashboard = Loadable(lazy(() => import('../views/dashboard/Dashboard')))
 const Excesscoopbilling = Loadable(lazy(() => import('../views/excesscoopbilling/Excesscoopbilling')));
 const ManageDispute = Loadable(lazy(() => import('../views/excesscoopbilling/ManageDispute')));
+const Shortage = Loadable(lazy(() => import('../views/shortage/ShortageClaim')));
 const Error = Loadable(lazy(() => import('../views/authentication/Error')));
 const Register = Loadable(lazy(() => import('../views/authentication/Register')));
 const Login = Loadable(lazy(() => import('../views/authentication/Login')));
@@ -21,6 +22,7 @@ const Router = [
       { path: '/', element: <Navigate to="/dashboard" /> }, 
       { path: '/dashboard', exact: true, element: <Dashboard /> },
       { path: '/excess-coop-billing', exact: true, element: <Excesscoopbilling /> }, 
+      { path: '/shortage', exact: true, element: <Shortage /> }, 
       { path: '/manage-dispute', exact: true, element: <ManageDispute /> }, 
     ],
   },

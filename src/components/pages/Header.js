@@ -12,7 +12,7 @@ const Header = ({ title }) => {
     paddingLeft: '10px',
   }));
   const TypographyStyled = styled(Typography)(({ theme }) => ({
-    color: theme.palette.text.white,
+    color: theme.palette.primary.contrastText,
   }));
 
   return (

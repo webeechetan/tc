@@ -6,11 +6,10 @@ import Chart from 'react-apexcharts';
 const RecoupedAmount = () => {
 	const TypographyStyled = styled(Typography)(({ theme }) => ({
 		color: theme.palette.secondary.main,
-		fontSize: '16px',
 	  }));
 	  const theme = useTheme();
 	  const secondary = theme.palette.secondary.main;
-	  const secondarylight = '#f5fcff';
+	  const success = 'theme.palette.success.main';
 	  const errorlight = '#fdede8';
 	
 	  // chart
@@ -33,7 +32,7 @@ const RecoupedAmount = () => {
 		  width: 2,
 		},
 		fill: {
-		  colors: [secondarylight],
+		  colors: [success],
 		  type: 'solid',
 		  opacity: 0.05,
 		},
@@ -52,14 +51,18 @@ const RecoupedAmount = () => {
 		},
 	  ];
   return (
-    <DashboardCard title='Recouped Amount'
+    <DashboardCard  title={
+		<TypographyStyled variant='h4' sx={{ color: theme.palette.accent.main }}>
+			 Recoupened Amount
+		</TypographyStyled>
+	} 
 	footer={
         <Chart options={optionscolumnchart} series={seriescolumnchart} type="area" height="60px" />
       }>
      <>
 	    <Stack direction='row' spacing={4} useFlexGap justifyContent="space-between" alignItems='center'>
 			<Box>
-			   <TypographyStyled variant='h3'>$ 4,942,234.43</TypographyStyled>
+			   <TypographyStyled variant='h1' sx={{ color: theme.palette.accent.main }}>$ 4,942,234.43</TypographyStyled>
 			</Box>
 		</Stack>
 		<Stack direction='row'>

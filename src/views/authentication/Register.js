@@ -1,12 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Grid, Box, Card, Stack, Typography } from '@mui/material';
+import { Grid, Box, Card, Stack, Typography,styled } from '@mui/material';
 import PageContainer from 'src/components/container/PageContainer';
 import Logo from 'src/layouts/full/shared/logo/Logo';
 import AuthRegister from './auth/AuthRegister';
 import bgImg from "src/assets/images/backgrounds/login-image.png";
 
 const Register2 = () => {
+  const TypographyTitle = styled(Typography)(({ theme }) => ({
+    color: theme.palette.secondary.main,
+  }));
   return (
     <PageContainer title="Register" description="This is the Register page">
       <Box
@@ -20,14 +23,14 @@ const Register2 = () => {
       >
         <Grid container spacing={0} alignItems="center" justifyContent="center" sx={{ height: '100%' }}>
           <Grid item xs={12} display="flex" justifyContent="center" alignItems="center">
-            <Card elevation={9} sx={{ width: '100%', maxWidth: '800px' }}>
+            <Card elevation={9} sx={{ width: '100%', maxWidth: '1000px' }}>
               <Grid container spacing={0} alignItems="center" justifyContent="center">
                 <Grid item xs={6}>
                   <Box sx={{ width: '100%', height: '100%' }}>
                     <img 
                       src={bgImg} 
                       alt="Background" 
-                      style={{ width: '100%', height: '100%', objectFit: 'contain' }} 
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                     />
                   </Box>
                 </Grid>
@@ -37,6 +40,11 @@ const Register2 = () => {
                       <Logo />
                     </Box>
                     <AuthRegister
+                     title={
+                      <TypographyTitle variant="h2" textAlign="center" color="textSecondary" mb={1}>
+                         signup
+                      </TypographyTitle>
+                      }
                       subtext={
                         <Typography variant="subtitle1" textAlign="center" color="textSecondary" mb={1}>
                           lorem ipsum dolor sit amet

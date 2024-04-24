@@ -13,7 +13,7 @@ import JobProgress from './components/JobProgress';
 import RecentTransactions from './components/RecentTransactions';
 import RecoupedAmount from './components/RecoupedAmount';
 import WinRate from './components/WinRate';
-import YearlyTrend from './components/YearlyTrend';
+import YearlyTrend from '../../components/pages/YearlyTrend';
 
 const Excesscoopbilling = () => {
   return (
@@ -27,22 +27,30 @@ const Excesscoopbilling = () => {
 			</Grid>
 
 			<Grid item xs={12} lg={8}>
-				<Stack direction="row" spacing={2} marginBottom={2}>
-					<Findingamount />
-					<YearlyTrend />
-				</Stack>
-				<Stack direction="row" spacing={2}>
-					<Disputed />
-					<RecoupedAmount />
-				</Stack>
+				<Grid container spacing={2} marginBottom={3}>
+					<Grid item xs={12} lg={6}>	
+					  <Findingamount />
+				    </Grid>
+					<Grid item xs={12} lg={6}>
+				    	<YearlyTrend />
+					</Grid>
+				</Grid>
+				<Grid container spacing={2}>
+					<Grid item xs={12} lg={6}>	
+                        <Disputed />
+				    </Grid>
+					<Grid item xs={12} lg={6}>
+                       <RecoupedAmount />
+					</Grid>
+				</Grid>
 			</Grid>
 			<Grid item xs={12} lg={4}>	
 				<Impactoverview />
 			</Grid>
-			<Grid item xs={12} lg={8}>
+			<Grid item xs={12} lg={7}>
 				<GranularAnalysis />
 			</Grid>
-			<Grid item xs={12} lg={4}>
+			<Grid item xs={12} lg={5}>
 				<WinRate />
 			</Grid>
 			<Grid item xs={12} lg={5}>	
