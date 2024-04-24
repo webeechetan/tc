@@ -23,7 +23,7 @@ const Sidebar = (props) => {
           }}
         >
           <Box sx={{ height: '100%' }}>
-            <Box px={3} style={{ display: "flex", alignItems: "center", borderBottom: '1px solid #eee' }} marginBottom={2}>
+            <Box px={3} style={{ display: "flex", alignItems: "center", justifyContent: "center", borderBottom: '1px solid #eee' }} marginBottom={2}>
               <Logo />
             </Box>
             <Box>

@@ -5,7 +5,7 @@ import { styled } from "@mui/material";
 const LinkStyled = styled(Link)(() => ({
   width: "70px",
   overflow: "hidden",
-  display: "block",
+  display: "block"
   
 }));
 
@@ -15,7 +15,7 @@ const Logo = () => {
       to="/"
       style={{
         display: "flex",
-        alignItems: "center",
+        alignItems: "center"
       }}
     >
       <img src={LogoDark1} alt="Logo" style={{ width: "100%" }} />
