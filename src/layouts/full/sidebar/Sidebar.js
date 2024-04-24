@@ -10,7 +10,7 @@ const Sidebar = (props) => {
 
   if (lgUp) {
     return (
-      <Box sx={{ width: sidebarWidth, flexShrink: 0 }}>
+      <Box sx={{ width: sidebarWidth, flexShrink: 0 }} >
         <Drawer
           anchor="left"
           open={props.isSidebarOpen}
@@ -26,7 +26,7 @@ const Sidebar = (props) => {
             <Box px={3} style={{ display: "flex", alignItems: "center", borderBottom: '1px solid #eee' }} marginBottom={2}>
               <Logo />
             </Box>
-            <Box sx={{backgroundColor: theme.palette.secondary.main}}>
+            <Box>
               <SidebarItems />
             </Box>
           </Box>
